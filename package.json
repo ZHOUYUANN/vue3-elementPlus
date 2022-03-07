@@ -9,6 +9,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^1.0.1",
     "core-js": "^3.6.5",
     "element-plus": "^2.0.5",
     "vue": "^3.2.8",
