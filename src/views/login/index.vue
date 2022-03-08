@@ -2,8 +2,8 @@
   <div class="login">
     <div class="login-container">
       <h2>登录</h2>
-      <el-form :model="loginForm" :rules="loginRules">
-        <el-form-item>
+      <el-form :model="loginForm" :rules="loginRules" ref="loginFromRef">
+        <el-form-item prop="username">
           <span class="login-container__svg">
             <svg-icon icon="https://res.lgdsunday.club/user.svg"></svg-icon>
           </span>
@@ -13,12 +13,13 @@
             placeholder="请输入用户名"
           ></el-input>
         </el-form-item>
-        <el-form-item>
+        <el-form-item prop="password">
           <span class="login-container__svg">
             <el-icon><lock /></el-icon>
           </span>
           <el-input
             :type="passwordType"
+            :loading="loading"
             v-model="loginForm.password"
             placeholder="请输入密码"
           ></el-input>
@@ -29,7 +30,12 @@
           </span>
         </el-form-item>
       </el-form>
-      <el-button type="primary" class="login-container__btn">登录</el-button>
+      <el-button
+        type="primary"
+        class="login-container__btn"
+        @click="handleLogin"
+        >登录</el-button
+      >
     </div>
   </div>
 </template>
@@ -37,11 +43,13 @@
 <script setup>
 import { Lock } from '@element-plus/icons-vue'
 import { ref } from 'vue'
+import { useStore } from 'vuex'
+import { useRouter } from 'vue-router'
 import { validatePassword } from './rules'
 
 const loginForm = ref({
   username: 'aa',
-  password: '11'
+  password: '123456'
 })
 
 const loginRules = ref({
@@ -69,6 +77,31 @@ function onChangePwdType() {
   } else {
     passwordType.value = 'password'
   }
+}
+
+const loginFromRef = ref(null)
+const loading = ref(false)
+const store = useStore()
+const router = useRouter()
+function handleLogin() {
+  // 先校验数据
+  loading.value = true
+  loginFromRef.value.validate((valid) => {
+    // 如果校验不通过就 返回
+    if (!valid) return
+    // 使用 vuex 加 localstorage 进行用户的保存处理，成功之后跳转页面
+    console.log(store)
+    store
+      .dispatch('user/userlogin', loginForm.value)
+      .then((res) => {
+        loading.value = false
+        router.push('/')
+      })
+      .catch((err) => {
+        loading.value = false
+        console.log(err)
+      })
+  })
 }
 </script>
 
