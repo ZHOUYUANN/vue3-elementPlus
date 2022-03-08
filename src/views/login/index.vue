@@ -29,7 +29,9 @@
           </span>
         </el-form-item>
       </el-form>
-      <el-button type="primary" class="login-container__btn">登录</el-button>
+      <el-button type="primary" class="login-container__btn" @click="login"
+        >登录</el-button
+      >
     </div>
   </div>
 </template>
@@ -70,6 +72,8 @@ function onChangePwdType() {
     passwordType.value = 'password'
   }
 }
+
+function login() {}
 </script>
 
 <style lang="stylus" scoped>
