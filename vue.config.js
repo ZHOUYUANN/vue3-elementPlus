@@ -47,9 +47,12 @@ module.exports = {
   devServer: {
     proxy: {
       // 当地址中包含 /api 时触发此代理
-      '/api': {
-        target: 'xxx',
-        changeOrigin: true
+      '/api/': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
       }
     }
   }

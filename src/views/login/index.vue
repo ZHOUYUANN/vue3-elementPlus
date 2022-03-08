@@ -90,7 +90,6 @@ function handleLogin() {
     // 如果校验不通过就 返回
     if (!valid) return
     // 使用 vuex 加 localstorage 进行用户的保存处理，成功之后跳转页面
-    console.log(store)
     store
       .dispatch('user/userlogin', loginForm.value)
       .then((res) => {

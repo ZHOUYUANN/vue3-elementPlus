@@ -1,10 +1,25 @@
 import axios from 'axios'
+import store from '@/store'
 import { ElMessage } from 'element-plus'
+import 'element-plus/theme-chalk/el-message.css'
 
 const http = axios.create({
   baseUrl: process.env.VUE_APP_BASE_API,
   timeout: 5000
 })
+
+// 设置请求拦截器
+http.interceptors.request.use(
+  (config) => {
+    if (store.getters.token) {
+      config.headers['X-Access-Token'] = store.getters.token
+    }
+    return config
+  },
+  (error) => {
+    return Promise.reject(error)
+  }
+)
 
 // 设置相应拦截器
 http.interceptors.response.use(
@@ -23,3 +38,5 @@ http.interceptors.response.use(
     return Promise.reject(err)
   }
 )
+
+export default http
