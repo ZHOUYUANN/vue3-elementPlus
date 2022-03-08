@@ -30,14 +30,13 @@
           </span>
         </el-form-item>
       </el-form>
-      <<<<<<< HEAD <el-button type="primary" class="login-container__btn"
-      @click="login" =======
       <el-button
         type="primary"
         class="login-container__btn"
         @click="handleLogin"
-        >>>>>>> 2a4442784872faef8d827226db40dd65262fcc9a >登录</el-button
       >
+        登录
+      </el-button>
     </div>
   </div>
 </template>

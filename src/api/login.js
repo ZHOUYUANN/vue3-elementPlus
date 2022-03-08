@@ -9,6 +9,6 @@ export function login(data) {
 
 export function getUserInfo() {
   return request({
-    url: '/userinfo'
+    url: '/api/userinfo'
   })
 }

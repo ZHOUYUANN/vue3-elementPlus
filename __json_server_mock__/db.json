@@ -7,6 +7,6 @@
       "token": "123456"
     }
   },
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "userinfo": [{ "id": 1, "body": "some comment", "postId": 1 }],
   "profile": { "name": "typicode" }
 }
