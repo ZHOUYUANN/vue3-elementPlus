@@ -4,7 +4,6 @@ import store from '@/store'
 const whiteList = ['/login']
 
 router.beforeEach(async (to, from, next) => {
-  console.log(store.getters.token)
   // 判断用户是否登录
   if (store.getters.token) {
     // 用户已登录，则不允许进入 login
@@ -13,9 +12,9 @@ router.beforeEach(async (to, from, next) => {
       next('/')
     } else {
       // 如果用户信息不存在，就通过 token 重新获取
-      // if (!store.getters.hasLogin) {
-      //   await store.dispatch('user/getUserInfo')
-      // }
+      if (!store.getters.hasLogin) {
+        await store.dispatch('user/getUserInfo')
+      }
       next()
     }
   } else {
