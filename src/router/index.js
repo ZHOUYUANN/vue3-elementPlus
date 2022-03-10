@@ -14,48 +14,46 @@ const privateRoutes = [
     },
     children: [
       {
-        path: 'manage',
+        path: '/user/manage',
         name: 'manage',
         component: () => import('@/views/user-manage'),
         meta: {
-          title: 'manage',
+          title: '用户管理',
           icon: 'el-icon-user'
         }
       },
       {
-        path: 'role',
+        path: '/user/role',
         name: 'role',
         component: () => import('@/views/user-role'),
         meta: {
-          title: 'role',
+          title: '用户角色',
           icon: 'el-icon-user'
         }
       },
       {
-        path: 'permission',
+        path: '/user/permission',
         name: 'permission',
         component: () => import('@/views/user-permission'),
         meta: {
-          title: 'permission',
+          title: '用户权限',
           icon: 'el-icon-user'
         }
       },
       {
-        path: 'info/:id',
+        path: '/user/info/:id',
         name: 'info',
         component: () => import('@/views/user-info'),
         meta: {
-          title: 'info',
-          icon: 'el-icon-user'
+          title: '用户详情'
         }
       },
       {
-        path: 'import',
+        path: '/user/import',
         name: 'import',
         component: () => import('@/views/import'),
         meta: {
-          title: 'execlimport',
-          icon: 'el-icon-user'
+          title: 'execlimport'
         }
       }
     ]
@@ -71,7 +69,7 @@ const privateRoutes = [
     },
     children: [
       {
-        path: 'ranking',
+        path: '/article/ranking',
         name: 'ranking',
         component: () => import('@/views/article-ranking'),
         meta: {
@@ -80,7 +78,7 @@ const privateRoutes = [
         }
       },
       {
-        path: '/:id',
+        path: '/article/:id',
         name: 'detail',
         component: () => import('@/views/article-detail'),
         meta: {
@@ -89,7 +87,7 @@ const privateRoutes = [
         }
       },
       {
-        path: 'create',
+        path: '/article/create',
         name: 'create',
         component: () => import('@/views/article-create'),
         meta: {
@@ -98,7 +96,7 @@ const privateRoutes = [
         }
       },
       {
-        path: 'editor/:id',
+        path: '/article/editor/:id',
         name: 'editor',
         component: () => import('@/views/article-editor'),
         meta: {

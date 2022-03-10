@@ -1,12 +1,12 @@
 <template>
   <div class="side">
     哈哈哈
-    <Menu></Menu>
+    <side-menu></side-menu>
   </div>
 </template>
 
 <script setup>
-import Menu from './menu'
+import SideMenu from './side-menu'
 </script>
 
 <style lang="stylus" scoped>
