@@ -1,6 +1,9 @@
 <template>
   <div class="nav">
-    <hamburger />
+    <div class="nav-left">
+      <hamburger />
+      <breadcrumb />
+    </div>
     <div class="avatar">
       <el-dropdown trigger="click">
         <div class="">
@@ -31,6 +34,7 @@
 import { Tools } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
 import Hamburger from '@/components/hamburger'
+import Breadcrumb from '@/components/breadcrumb'
 
 const store = useStore()
 
@@ -51,6 +55,8 @@ function userlogout() {
   display flex
   align-items center
   justify-content space-between
+  .nav-left
+    flex-center()
   .avatar
     /deep/.el-icon
       margin-left 5px

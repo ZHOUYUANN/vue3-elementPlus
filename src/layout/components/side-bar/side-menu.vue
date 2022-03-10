@@ -26,7 +26,6 @@ const router = useRouter()
 
 const routes = computed(() => {
   const res = filterRouters(router.getRoutes())
-  console.log(generateMenus(res))
   return generateMenus(res)
 })
 
