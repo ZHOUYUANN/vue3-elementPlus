@@ -37,4 +37,7 @@ const activeMenu = computed(() => {
 })
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+/deep/.el-menu
+  border-right none
+</style>

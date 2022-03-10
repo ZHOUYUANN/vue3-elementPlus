@@ -26,7 +26,6 @@ import AppMain from './components/app-main'
   width 100%
   height 100%
   display flex
-  transition all .3s
   .layout-container
     flex 1
     header
