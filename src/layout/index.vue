@@ -1,7 +1,10 @@
 <template>
-  <div class="layout">
+  <div
+    class="layout"
+    :class="[$store.getters.sidebarOpened ? 'openSidebar' : 'hideSidebar']"
+  >
     <!-- 左侧 menu -->
-    <side-bar></side-bar>
+    <side-bar class="side-container"></side-bar>
     <div class="layout-container">
       <header>
         <nav-bar></nav-bar>
@@ -23,6 +26,7 @@ import AppMain from './components/app-main'
   width 100%
   height 100%
   display flex
+  transition all .3s
   .layout-container
     flex 1
     header
@@ -31,4 +35,15 @@ import AppMain from './components/app-main'
       right 0
       width calc(100% - 240px)
       z-index 9
+      transition all .3s
+  &.openSidebar
+    .side-container
+      width 240px
+    header
+      width calc(100% - 240px)
+  &.hideSidebar
+    .side-container
+      width 63px
+    header
+      width calc(100% - 63px)
 </style>

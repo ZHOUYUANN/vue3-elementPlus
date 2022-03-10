@@ -1,5 +1,6 @@
 <template>
   <div class="nav">
+    <hamburger />
     <div class="avatar">
       <el-dropdown trigger="click">
         <div class="">
@@ -29,6 +30,7 @@
 <script setup>
 import { Tools } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
+import Hamburger from '@/components/hamburger'
 
 const store = useStore()
 
@@ -48,7 +50,7 @@ function userlogout() {
   box-sizing border-box
   display flex
   align-items center
-  justify-content flex-end
+  justify-content space-between
   .avatar
     /deep/.el-icon
       margin-left 5px

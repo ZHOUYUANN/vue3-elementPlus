@@ -14,4 +14,5 @@ import SideMenu from './side-menu'
   width 240px
   height 100%
   background #545c64
+  transition all .3s
 </style>
