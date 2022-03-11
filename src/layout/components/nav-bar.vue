@@ -4,28 +4,31 @@
       <hamburger />
       <breadcrumb />
     </div>
-    <div class="avatar">
-      <el-dropdown trigger="click">
-        <div class="">
-          <el-avatar
-            shape="square"
-            :size="40"
-            :src="$store.getters.userInfo.avatar"
-          ></el-avatar>
-          <el-icon><tools /></el-icon>
-        </div>
-        <template #dropdown>
-          <el-dropdown-menu>
-            <router-link to="/">
-              <el-dropdown-item>主页</el-dropdown-item>
-            </router-link>
-            <a target="__blank" href="https://luszy.com">
-              <el-dropdown-item>博客地址</el-dropdown-item>
-            </a>
-            <el-dropdown-item @click="userlogout">退出登录</el-dropdown-item>
-          </el-dropdown-menu>
-        </template>
-      </el-dropdown>
+    <div class="nav-right">
+      <header-search />
+      <div class="avatar">
+        <el-dropdown trigger="click">
+          <div class="">
+            <el-avatar
+              shape="square"
+              :size="40"
+              :src="$store.getters.userInfo.avatar"
+            ></el-avatar>
+            <el-icon><tools /></el-icon>
+          </div>
+          <template #dropdown>
+            <el-dropdown-menu>
+              <router-link to="/">
+                <el-dropdown-item>主页</el-dropdown-item>
+              </router-link>
+              <a target="__blank" href="https://luszy.com">
+                <el-dropdown-item>博客地址</el-dropdown-item>
+              </a>
+              <el-dropdown-item @click="userlogout">退出登录</el-dropdown-item>
+            </el-dropdown-menu>
+          </template>
+        </el-dropdown>
+      </div>
     </div>
   </div>
 </template>
@@ -35,6 +38,7 @@ import { Tools } from '@element-plus/icons-vue'
 import { useStore } from 'vuex'
 import Hamburger from '@/components/hamburger'
 import Breadcrumb from '@/components/breadcrumb'
+import HeaderSearch from '@/components/header-search'
 
 const store = useStore()
 
@@ -55,7 +59,8 @@ function userlogout() {
   display flex
   align-items center
   justify-content space-between
-  .nav-left
+  .nav-left,
+  .nav-right
     flex-center()
   .avatar
     /deep/.el-icon

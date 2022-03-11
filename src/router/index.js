@@ -64,7 +64,7 @@ const privateRoutes = [
     redirect: '/article/ranking',
     component: BaseLayout,
     meta: {
-      title: 'article',
+      title: '文章',
       icon: 'persennel'
     },
     children: [
@@ -73,7 +73,7 @@ const privateRoutes = [
         name: 'ranking',
         component: () => import('@/views/article-ranking'),
         meta: {
-          title: 'ranking',
+          title: '文章排行',
           icon: 'persennel'
         }
       },
@@ -82,7 +82,7 @@ const privateRoutes = [
         name: 'detail',
         component: () => import('@/views/article-detail'),
         meta: {
-          title: 'detail',
+          title: '文章详情',
           icon: 'persennel'
         }
       },
@@ -91,8 +91,7 @@ const privateRoutes = [
         name: 'create',
         component: () => import('@/views/article-create'),
         meta: {
-          title: 'create',
-          icon: 'persennel'
+          title: '创建文章'
         }
       },
       {
@@ -100,7 +99,7 @@ const privateRoutes = [
         name: 'editor',
         component: () => import('@/views/article-editor'),
         meta: {
-          title: 'editor',
+          title: '文章编辑',
           icon: 'persennel'
         }
       }
@@ -125,7 +124,7 @@ const publicRoutes = [
         name: 'profile',
         component: () => import('@/views/profile'),
         meta: {
-          title: 'profile',
+          title: '个人中心',
           icon: 'el-icon-user'
         }
       },
