@@ -1,11 +1,13 @@
 <template>
   <el-breadcrumb class="breadcrumb" separator="/">
-    <el-breadcrumb-item
-      v-for="breadcrumb in breadcrumbs"
-      :key="breadcrumb.path"
-    >
-      <span>{{ breadcrumb.meta.title }}</span>
-    </el-breadcrumb-item>
+    <transition-group name="breadcrumb">
+      <el-breadcrumb-item
+        v-for="breadcrumb in breadcrumbs"
+        :key="breadcrumb.path"
+      >
+        <span>{{ breadcrumb.meta.title }}</span>
+      </el-breadcrumb-item>
+    </transition-group>
   </el-breadcrumb>
 </template>
 

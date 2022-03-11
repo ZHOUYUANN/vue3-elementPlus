@@ -34,7 +34,7 @@ import AppMain from './components/app-main'
       right 0
       width calc(100% - 240px)
       z-index 9
-      transition all .3s
+      transition width .28s
   &.openSidebar
     .side-container
       width 240px
